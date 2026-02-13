@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Specter Corp | AI Video Studio</title>
+
+<style>
+:root {
+  --bg:#0b0b0f;
+  --accent:#6cffd6;
+  --text:#eaeaea;
+  --muted:#9aa0a6;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Segoe UI,Tahoma,sans-serif}
+
+body{
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+
+section{
+  padding:5rem 8%;
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+
+section.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+header{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:2rem;
+  background:radial-gradient(circle at top,#111 0%,#000 70%);
+}
+
+header h1{
+  font-size:clamp(2.5rem,5vw,4rem);
+}
+
+header span{color:var(--accent)}
+
+header p{
+  max-width:700px;
+  margin:1rem auto 2rem;
+  color:var(--muted);
+}
+
+.btn{
+  display:inline-block;
+  padding:0.9rem 2rem;
+  background:var(--accent);
+  color:#000;
+  text-decoration:none;
+  border-radius:50px;
+  font-weight:600;
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 0 25px rgba(108,255,214,.6);
+}
+
+.section-title{
+  font-size:2rem;
+  margin-bottom:1rem;
+}
+
+.section-sub{
+  color:var(--muted);
+  max-width:700px;
+  margin-bottom:3rem;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:2rem;
+}
+
+.card{
+  background:#111;
+  padding:2rem;
+  border-radius:16px;
+  transition:.3s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border:1px solid var(--accent);
+}
+
+.video-box{
+  position:relative;
+  height:200px;
+  border-radius:16px;
+  background:linear-gradient(135deg,#111,#000);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:var(--muted);
+  transition:.3s;
+}
+
+.video-box:hover{
+  color:var(--accent);
+  transform:scale(1.03);
+}
+
+footer{
+  background:#050507;
+  text-align:center;
+  padding:2rem;
+  color:var(--muted);
+}
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>Turn <span>Words</span> Into Viral AI Videos</h1>
+    <p>We transform scripts and prompts into cinematic AI videos for short-form dominance. Based in Nairobi, Kenya.</p>
+    <a href="#contact" class="btn">Start a Project</a>
+  </div>
+</header>
+<section>
+<h2 class="section-title">About Specter Corp</h2>
+<p class="section-sub">Specter Corp blends storytelling, professional video editing, and AI to create scroll-stopping videos built for attention.</p>
+</section>
+<section>
+<h2 class="section-title">Services</h2>
+<div class="grid">
+  <div class="card"><h3>Script → AI Video</h3><p>Turning written ideas into cinematic visuals.</p></div>
+  <div class="card"><h3>AI Video Editing</h3><p>Fast pacing, captions, effects, polish.</p></div>
+  <div class="card"><h3>Prompt Engineering</h3><p>High-impact prompts for AI visuals.</p></div>
+  <div class="card"><h3>Short-Form Optimization</h3><p>Built for retention and virality.</p></div>
+</div>
+</section>
+<section>
+<h2 class="section-title">Portfolio</h2>
+<p class="section-sub">Sample AI-powered video concepts.</p>
+<div class="grid">
+  <div class="video-box">AI Cinematic Reel</div>
+  <div class="video-box">Story-Driven Short</div>
+  <div class="video-box">Prompt-Based Visual</div>
+</div>
+</section>
+<section id="contact">
+<h2 class="section-title">Contact</h2>
+<p class="section-sub">Let’s turn your script into impact.</p>
+<a href="mailto:your@email.com" class="btn">Email Specter Corp</a>
+</section>
+<footer>© 2026 Specter Corp • Nairobi, Kenya</footer>
+<script>
+const sections=document.querySelectorAll("section");
+const observer=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add("show")}})},{threshold:0.2});
+sections.forEach(sec=>observer.observe(sec));
+</script>
+</body>
+</html>
